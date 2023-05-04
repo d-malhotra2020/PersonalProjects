@@ -30,11 +30,14 @@ resources = {
     "coffee": 100,
 }
 
+
 def make_coffee(drink_name, order_ingredients):
-    #deduct the required ingredients from the resources
+    # deduct the required ingredients from the resources
     for item in order_ingredients:
         resources[item] -= order_ingredients[item]
     print(f"Here is your {drink_name}☕️☕️☕️☕️☕️☕️☕️☕️ Enjoy")
+
+
 def is_resource_sufficient(order_ingredients):
     is_enough = True
     for item in order_ingredients:
@@ -45,7 +48,7 @@ def is_resource_sufficient(order_ingredients):
 
 
 def process_coins():
-    """returns the total caluclated from coins inserted"""
+    """returns the total calculated from coins inserted"""
 
     print("Please insert coins")
     total = int(input("how many quarters: ")) * 0.25
@@ -55,9 +58,9 @@ def process_coins():
     return total
 
 
-def is_transaction_successful(money_recieved, drink_cost):
-    if money_recieved >= drink_cost:
-        change = round(money_recieved - drink_cost, 3)
+def is_transaction_successful(money_received, drink_cost):
+    if money_received >= drink_cost:
+        change = round(money_received - drink_cost, 4)
         print(f"Here is your ${change} in change ")
         global profit
         profit += drink_cost
@@ -84,4 +87,3 @@ while is_on:
             payment = process_coins()
             if is_transaction_successful(payment, drink["cost"]):
                 make_coffee(option, drink["ingredients"])
-
