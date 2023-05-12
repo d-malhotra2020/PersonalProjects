@@ -4,6 +4,5 @@ class Question:
         self.answer = q_answer
 
 
-new_q = Question("sdfg", "False")
-print(new_q.text)
-print(new_q.answer)
+#print(new_q.text)
+#print(new_q.answer)
